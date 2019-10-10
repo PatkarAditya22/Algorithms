@@ -5,13 +5,19 @@ using namespace std;
 
 template <typename T>
 void bubble(T arr[],int size){
+	bool flag;
 	for(int i=0;i<size-1;i++){
+		flag = false;
 		for(int j=0;j<size-1-i;j++){
 			if(arr[j] > arr[j+1]){
 				int swap = arr[j];
 				arr[j] = arr[j+1];
 				arr[j+1] = swap;
+				flag = true;
 			}
+		}
+		if(!flag) {
+			break;
 		}
 	}
 }
